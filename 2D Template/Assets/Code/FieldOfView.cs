@@ -6,6 +6,8 @@ public class FieldOfView : MonoBehaviour
 {
     public float radius = 5;
     [Range(1, 360)]public float angle = 45;
+    [Range(0, 1)]public float dotAngle = 0.7f;
+    public float offSet;
     public LayerMask targetLayer;
     public LayerMask obstructionLayer;
 
@@ -38,7 +40,12 @@ public class FieldOfView : MonoBehaviour
             Transform target = rangeCheck[0].transform;
             Vector2 directionToTarget = (target.position - transform.position).normalized;
 
-            if(Vector2.Angle(transform.up , directionToTarget) < angle / 2)
+            Vector2 dir = DirecetionFromAngle(transform.up.y, offSet);
+
+            float dot = Vector2.Dot(dir, directionToTarget);
+            Debug.Log(dot);
+
+            if (dot > dotAngle)
             {
                 float distanceToTarget = Vector2.Distance(transform.position, target.position);
 
@@ -64,8 +71,8 @@ public class FieldOfView : MonoBehaviour
         Gizmos.color = Color.white;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
 
-        Vector3 angle01 = DirecetionFromAngle(-transform.eulerAngles.z, - angle / 2);
-        Vector3 angle02 = DirecetionFromAngle(-transform.eulerAngles.z, angle / 2);
+        Vector3 angle01 = DirecetionFromAngle(-transform.eulerAngles.z, - angle / 2 + offSet);
+        Vector3 angle02 = DirecetionFromAngle(-transform.eulerAngles.z, angle / 2 + offSet);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
