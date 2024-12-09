@@ -13,7 +13,7 @@ public class FieldOfView : MonoBehaviour
 
     public GameObject playerRef;
 
-    public bool CanSeePlayer { get; private set; }
+    public Chase chase;
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -51,18 +51,18 @@ public class FieldOfView : MonoBehaviour
 
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionLayer))
                 
-                    CanSeePlayer = true;
-                else 
-                    CanSeePlayer = false;
+                    chase.state = Chase.AIstate.chase;
+                else
+                    chase.state = Chase.AIstate.patorl;
             }
             else
             {
-                CanSeePlayer = false;
+                chase.state = Chase.AIstate.patorl;
             }
         }
-        else if (CanSeePlayer)
+        else
         {
-            CanSeePlayer = false;
+            chase.state = Chase.AIstate.patorl;
         }
     }
 
@@ -78,7 +78,7 @@ public class FieldOfView : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
         Gizmos.DrawLine(transform.position, transform.position + angle02 * radius);
 
-        if (CanSeePlayer)
+        if (chase.state == Chase.AIstate.chase)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, playerRef.transform.position);
