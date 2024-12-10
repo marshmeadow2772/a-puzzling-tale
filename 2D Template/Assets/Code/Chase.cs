@@ -16,7 +16,7 @@ public class Chase : MonoBehaviour
 
     public enum AIstate
     {
-        patorl, chase
+        patorl, chase, deterred
     }
     public AIstate state;
     void Start()
@@ -33,7 +33,7 @@ public class Chase : MonoBehaviour
             direction.Normalize();
             movement = direction;
             rb.velocity = movement * moveSpeed;
-            print("Hello");
+            
             
            
             state = AIstate.chase;
