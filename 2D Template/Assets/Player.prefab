@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6074037179524800930}
   - component: {fileID: 6074037179524800959}
   - component: {fileID: 6074037179524800952}
+  - component: {fileID: -2476348879502497414}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -189,6 +190,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cross: {fileID: 7260966197190633471, guid: 9caa30280a216714e9f1770df169bf4f, type: 3}
   shootingPoint: {fileID: 6074037179908659547}
+  movement: {fileID: 0}
+--- !u!114 &-2476348879502497414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6074037179524800929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f14a2b57340b934f90d4c2e84640ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6074037179524800931}
 --- !u!1 &6074037179908659546
 GameObject:
   m_ObjectHideFlags: 0

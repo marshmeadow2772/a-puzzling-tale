@@ -9,14 +9,8 @@ public class Cross : MonoBehaviour
     public GameObject cross;
     public Transform shootingPoint;
     private GameObject crossInstant;
+    public Movement movement;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

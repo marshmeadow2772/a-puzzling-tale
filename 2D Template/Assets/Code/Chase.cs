@@ -47,10 +47,7 @@ public class Chase : MonoBehaviour
         // When the cross is brought out by the player the Dover will freeze for 5-7 seconds 
         if (state == AIstate.deterred)
         {
-            //if(object == crossLayer)
-            //{
-
-            //}
+            
         }
     }
 
