@@ -9,8 +9,8 @@ public class Chase : MonoBehaviour
 
     private Vector2 movement;
     private Rigidbody2D rb;
-    
-    
+
+    public LayerMask crossLayer; 
     public EnemyPatrol targetPatorl;
     public FieldOfView targetView;
 
@@ -25,6 +25,7 @@ public class Chase : MonoBehaviour
     }
     void Update()
     {
+        // This part of the code is to control wether or not it is patorling or chasing the player 
         if (state == AIstate.chase)
         {
             Vector3 direction = player.position - transform.position;
@@ -42,6 +43,14 @@ public class Chase : MonoBehaviour
         {
            
             state = AIstate.patorl;
+        }
+        // When the cross is brought out by the player the Dover will freeze for 5-7 seconds 
+        if (state == AIstate.deterred)
+        {
+            //if(object == crossLayer)
+            //{
+
+            //}
         }
     }
 

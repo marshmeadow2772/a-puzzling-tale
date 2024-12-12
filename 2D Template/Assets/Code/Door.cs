@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] bool goNextLevel;
+    [SerializeField] string levelName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            ScemeController.instance.NextLevel();
+            if (goNextLevel)
+            {
+                ScemeController.instance.NextLevel();
+            }
+            else
+            {
+                ScemeController.instance.LoadScene(levelName);
+            }
         }
     }
 }
