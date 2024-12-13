@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58ab8e56315e7840821bee6cfe5b2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goNextLevel: 0
-  levelName: Inside House 1
+  goNextLevel: 1
+  levelName: 
 --- !u!1 &620438918
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984454035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5058, y: -6.705, z: -10}
+  m_LocalPosition: {x: -11.3558, y: -7.065, z: -10}
   m_LocalScale: {x: 1.0625, y: 0.975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1080,7 +1080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791927825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5058, y: -6.705, z: -10}
+  m_LocalPosition: {x: -11.3558, y: -7.065, z: -10}
   m_LocalScale: {x: 0.2536139, y: 0.15064718, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1350,6 +1350,10 @@ PrefabInstance:
       value: 0.189
       objectReference: {fileID: 0}
     - target: {fileID: 3582209015203632118, guid: e952eab08556574408210f0e849de96c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582209015203632118, guid: e952eab08556574408210f0e849de96c, type: 3}
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 1570170765}
@@ -1357,6 +1361,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1570170770}
+    - target: {fileID: 3582209015203632119, guid: e952eab08556574408210f0e849de96c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3582209015203632124, guid: e952eab08556574408210f0e849de96c, type: 3}
       propertyPath: m_Name
       value: DoverHair
@@ -1371,7 +1379,7 @@ PrefabInstance:
       objectReference: {fileID: 966597924}
     - target: {fileID: 3582209015203632125, guid: e952eab08556574408210f0e849de96c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1398,11 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6074037179524800958, guid: 2f168d59381b56f45840ea27b44f964a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: -11.45
       objectReference: {fileID: 0}
     - target: {fileID: 6074037179524800958, guid: 2f168d59381b56f45840ea27b44f964a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.85
+      value: -7.21
       objectReference: {fileID: 0}
     - target: {fileID: 6074037179524800958, guid: 2f168d59381b56f45840ea27b44f964a, type: 3}
       propertyPath: m_LocalPosition.z
