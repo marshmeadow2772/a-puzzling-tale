@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class HouseDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool enterAllowed;
+    private string sceneToLoad;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+       if (collision.GetComponent<FirstDoor>())
+       {
+            sceneToLoad = "Inside House 1";
+            enterAllowed = true;
+       }
+       else if (collision.GetComponent<SecondDoor>())
+       {
+            sceneToLoad = "Inside House 2";
+            enterAllowed = true;
+       }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<FirstDoor>() || collision.GetComponent<SecondDoor>()) ;
+        {
+            enterAllowed = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (enterAllowed && Input.GetKey(KeyCode.E))
+        {
+            //ScemeController.LoadScene(sceneToLoad);
+        }
     }
 }
