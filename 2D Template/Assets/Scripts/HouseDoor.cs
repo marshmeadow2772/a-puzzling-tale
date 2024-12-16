@@ -9,24 +9,24 @@ public class HouseDoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if (collision.GetComponent<FirstDoor>())
-       {
-            sceneToLoad = "Inside House 1";
-            enterAllowed = true;
-       }
-       else if (collision.GetComponent<SecondDoor>())
-       {
-            sceneToLoad = "Inside House 2";
-            enterAllowed = true;
-       }
+       //if (collision.GetComponent<FirstDoor>())
+       //{
+            //sceneToLoad = "Inside House 1";
+            //enterAllowed = true;
+       //}
+       //else if (collision.GetComponent<SecondDoor>())
+       //{
+            //sceneToLoad = "Inside House 2";
+            //enterAllowed = true;
+       //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<FirstDoor>() || collision.GetComponent<SecondDoor>()) ;
-        {
-            enterAllowed = false;
-        }
+        //if (collision.GetComponent<FirstDoor>() || collision.GetComponent<SecondDoor>()) ;
+        //{
+            //enterAllowed = false;
+        //}
     }
 
     private void Update()
