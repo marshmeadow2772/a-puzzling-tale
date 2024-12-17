@@ -27,12 +27,12 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("print");
             GetComponent<Rigidbody2D>().velocity = new Vector2(-Sprint.speed, GetComponent<Rigidbody2D>().velocity.y);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (Input.GetKey(right))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(Sprint.speed, GetComponent<Rigidbody2D>().velocity.y);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         RaycastHit2D hitInfo;
         
