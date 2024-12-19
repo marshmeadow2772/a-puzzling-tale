@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public Sprint Sprint;
 
     private Rigidbody2D rb;
-
+    private Animator animator;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,8 +47,10 @@ public class Movement : MonoBehaviour
         if (moveDirection != 0)
         {
             rb.velocity = new Vector2(moveDirection * Sprint.speed, rb.velocity.y);
-            transform.rotation = Quaternion.Euler(0, moveDirection < 0 ? 0 : 180, 0);
+            transform.rotation = Quaternion.Euler(0, moveDirection < 0 ? 180 : 0, 0);
         }
+
+        
     }
 
     private void HandleJump()

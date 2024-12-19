@@ -23,7 +23,7 @@ public class Sprint : MonoBehaviour
         {
             isRunning = true;
             stamina -= 5.0f * Time.deltaTime;
-            speed = 8;
+            speed = 10;
         }
         else
         {
@@ -36,4 +36,6 @@ public class Sprint : MonoBehaviour
             stamina += 0.05f;
         }
     }
+
+    
 }

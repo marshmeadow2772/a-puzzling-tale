@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Chase : MonoBehaviour
@@ -48,6 +49,14 @@ public class Chase : MonoBehaviour
         if (state == AIstate.deterred)
         {
             
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
         }
     }
 
