@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 13fec644536543445bf7046ab326929b
   - enabled: 0
-    path: Assets/Scenes/Inside House 1.unity
+    path: Assets/Scenes/Death.unity
     guid: 30c4f81f420496847b9349899071b3dd
   m_configObjects: {}

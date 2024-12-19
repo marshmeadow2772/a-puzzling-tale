@@ -10,10 +10,12 @@ public class Chase : MonoBehaviour
 
     private Vector2 movement;
     private Rigidbody2D rb;
+    private bool isDead;
 
     public LayerMask crossLayer; 
     public EnemyPatrol targetPatorl;
     public FieldOfView targetView;
+     
 
     public enum AIstate
     {
@@ -56,6 +58,7 @@ public class Chase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            
             Destroy(other.gameObject);
         }
     }
