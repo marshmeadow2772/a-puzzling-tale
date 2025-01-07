@@ -56,9 +56,10 @@ public class Chase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && isDead)
-        {           
+        if (other.gameObject.CompareTag("Player") && !isDead)
+        {
             Destroy(other.gameObject);
+            isDead = true;
             Debug.Log("Dead");
             gameManger.gameOver();
         }
