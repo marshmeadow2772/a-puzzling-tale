@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -7,44 +5,74 @@ public class Movement : MonoBehaviour
     public KeyCode left;
     public KeyCode right;
     public float speed;
-    private Rigidbody2D rigidbody2d;
-    private GameObject boxRef;
     public Vector2 boxSize = new Vector2(0.25f, 0.01f);
     public Vector3 boxOffset;
     public LayerMask groundLayer;
     public Sprint Sprint;
 
-    // Update is called once per frame
-
+    private Rigidbody2D rb;
+    private Animator animator;
     private void Awake()
     {
-        rigidbody2d = transform.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKey(left))
+        HandleMovement();
+        HandleJump();
+    }
+
+    private void HandleMovement()
+    {
+        float moveDirection = 0;
+
+        // Keyboard input
+        if (Input.GetKey(left) || Input.GetKey(KeyCode.LeftArrow)) moveDirection = -1;
+        if (Input.GetKey(right) || Input.GetKey(KeyCode.RightArrow)) moveDirection = 1;
+
+        // Controller input (Left Joystick and D-pad without custom axis)
+        float joystickHorizontal = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(joystickHorizontal) > 0.1f)
         {
-            Debug.Log("print");
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-Sprint.speed, GetComponent<Rigidbody2D>().velocity.y);
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            moveDirection = joystickHorizontal;
         }
-        if (Input.GetKey(right))
+        else
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Sprint.speed, GetComponent<Rigidbody2D>().velocity.y);
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            // D-pad detection using raw input
+            if (Input.GetKey(KeyCode.Joystick1Button6)) moveDirection = -1; // D-pad left
+            if (Input.GetKey(KeyCode.Joystick1Button7)) moveDirection = 1;  // D-pad right
         }
-        RaycastHit2D hitInfo;
+
+        if (moveDirection != 0)
+        {
+            rb.velocity = new Vector2(moveDirection * Sprint.speed, rb.velocity.y);
+            transform.rotation = Quaternion.Euler(0, moveDirection < 0 ? 180 : 0, 0);
+        }
+
         
-        hitInfo = Physics2D.BoxCast(transform.position + boxOffset, boxSize, 0, Vector2.down, boxSize.y, groundLayer);
-        if (Input.GetKeyDown(KeyCode.Space) && hitInfo)
+    }
+
+    private void HandleJump()
+    {
+        bool isGrounded = Physics2D.BoxCast(transform.position + boxOffset, boxSize, 0, Vector2.down, boxSize.y, groundLayer);
+
+        // Keyboard jump
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
         {
-            float jumpVelocity = 15f;
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            rb.velocity = Vector2.up * 15f;
+        }
+
+        // Controller jump (A button / Joystick1Button0)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0) && isGrounded)
+        {
+            rb.velocity = Vector2.up * 15f;
         }
     }
+
     private void OnDrawGizmos()
     {
-        Gizmos.DrawCube(transform.position + boxOffset, boxSize);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position + boxOffset, boxSize);
     }
 }
