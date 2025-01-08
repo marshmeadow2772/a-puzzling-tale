@@ -15,8 +15,8 @@ public class Chase : MonoBehaviour
     public LayerMask crossLayer; 
     public EnemyPatrol targetPatorl;
     public FieldOfView targetView;
-     
 
+    public GameManger gameManger;
     public enum AIstate
     {
         patorl, chase, deterred
@@ -56,10 +56,12 @@ public class Chase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isDead)
         {
-            
             Destroy(other.gameObject);
+            isDead = true;
+            Debug.Log("Dead");
+            gameManger.gameOver();
         }
     }
 

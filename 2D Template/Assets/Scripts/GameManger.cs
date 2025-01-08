@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class GameManger : MonoBehaviour
 {
     public GameObject gameOverUI;
     // Start is called before the first frame update
@@ -19,6 +20,21 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void gameOver()
     {
-        gameObject.SetActive(true);
+        gameOverUI.SetActive(true);
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
