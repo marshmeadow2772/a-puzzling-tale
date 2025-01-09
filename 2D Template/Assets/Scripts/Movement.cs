@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -50,7 +51,7 @@ public class Movement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, moveDirection < 0 ? 180 : 0, 0);
         }
 
-        
+        animator.SetFloat("Walk", Mathf.Abs(moveDirection));
     }
 
     private void HandleJump()
