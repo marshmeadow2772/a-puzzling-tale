@@ -27,4 +27,9 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void play()
+    {
+        SceneManager.LoadScene("Graveyard");
+    }
 }
