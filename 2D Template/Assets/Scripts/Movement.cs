@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
@@ -69,6 +70,8 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = Vector2.up * 15f;
         }
+
+        animator.SetTrigger("Jump");
     }
 
     private void OnDrawGizmos()

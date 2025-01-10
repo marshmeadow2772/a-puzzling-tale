@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a4adc6d4224a4248ae844b137edec5b
+guid: ab5eda3523ca5d44aa2c8de326134784
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayStart button_0
+      name: restart button_0
       rect:
         serializedVersion: 2
-        x: 653
-        y: 508
-        width: 757
-        height: 382
+        x: 313
+        y: 305
+        width: 401
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9264440cfc6864487a7f54a3027f65
-      internalID: -1828551953
+      spriteID: 67555a8fba8bfce42bc42640e2eac564
+      internalID: 1589077417
       vertices: []
       indices: 
       edges: []
@@ -162,7 +162,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayStart button_0: -1828551953
+      restart button_0: 1589077417
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
