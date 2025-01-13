@@ -58,20 +58,18 @@ public class Movement : MonoBehaviour
     private void HandleJump()
     {
         bool isGrounded = Physics2D.BoxCast(transform.position + boxOffset, boxSize, 0, Vector2.down, boxSize.y, groundLayer);
+        Debug.Log(isGrounded);
 
         // Keyboard jump
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isGrounded)
         {
             rb.velocity = Vector2.up * 15f;
-        }
-
-        // Controller jump (A button / Joystick1Button0)
-        if (Input.GetKeyDown(KeyCode.Joystick1Button0) && isGrounded)
+            animator.SetBool("Landed", false);
+            animator.SetTrigger("Jump");
+        } else if (isGrounded && rb.velocity.y <= 0)
         {
-            rb.velocity = Vector2.up * 15f;
+            animator.SetBool("Landed", true);
         }
-
-        animator.SetTrigger("Jump");
     }
 
     private void OnDrawGizmos()
