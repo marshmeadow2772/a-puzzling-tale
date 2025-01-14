@@ -23,11 +23,12 @@ public class CrossAttack : MonoBehaviour
         // Activate attack when Mouse1 is pressed
         if (Input.GetMouseButtonDown(0) && !isOnCooldown)
         {
-            StartCoroutine(ExecuteCrossAttack());
+            //StartCoroutine(ExecuteCrossAttack());
         }
     }
+}
 
-    private IEnumerator ExecuteCrossAttack()
+    /*private IEnumerator ExecuteCrossAttack()
     {
         isOnCooldown = true;
         cooldownTimer = cooldownDuration;
@@ -43,7 +44,7 @@ public class CrossAttack : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (Collider hit in hitColliders)
         {
-            Target target = hit.GetComponent<Target>(); // Assumes a Target script on potential targets
+            /*Target target = hit.GetComponent<Target>(); // Assumes a Target script on potential targets
             if (target != null)
             {
                 StartCoroutine(StunTarget(target));
@@ -60,17 +61,17 @@ public class CrossAttack : MonoBehaviour
         }
     }
 
-    private IEnumerator StunTarget(Target target)
+    //private IEnumerator StunTarget(Target target)
     {
-        target.Stun(); // Assumes a Stun method in the Target script
-        yield return new WaitForSeconds(stunDuration);
-        target.Unstun(); // Assumes an Unstun method in the Target script
+        //target.Stun(); // Assumes a Stun method in the Target script
+        //yield return new WaitForSeconds(stunDuration);
+        //target.Unstun(); // Assumes an Unstun method in the Target script
     }
 
-    private void OnDrawGizmosSelected()
+    /*private void OnDrawGizmosSelected()
     {
         // Draw radius in the editor
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
-}
+}*/
