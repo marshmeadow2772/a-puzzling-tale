@@ -58,7 +58,6 @@ public class Movement : MonoBehaviour
     private void HandleJump()
     {
         bool isGrounded = Physics2D.BoxCast(transform.position + boxOffset, boxSize, 0, Vector2.down, boxSize.y, groundLayer);
-        Debug.Log(isGrounded);
 
         // Keyboard jump
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isGrounded)

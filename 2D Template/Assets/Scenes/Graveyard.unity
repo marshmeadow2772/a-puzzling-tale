@@ -7611,6 +7611,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bb36196aa95e94f995428834904046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1570170781 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6074037179524800957, guid: 2f168d59381b56f45840ea27b44f964a, type: 3}
+  m_PrefabInstance: {fileID: 6074037180420949548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570170782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570170765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2366ea37e98f14bbceed8c13c473da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  knockbackForce: 5
+  flashDuration: 0.1
+  spriteRenderer: {fileID: 1570170781}
+--- !u!114 &1570170783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570170765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb5f2db66372b54b94f7507a74ac054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRadius: 10
+  stunDuration: 10
+  playerFreezeDuration: 5
+  cooldownDuration: 15
 --- !u!1 &1573237442
 GameObject:
   m_ObjectHideFlags: 0

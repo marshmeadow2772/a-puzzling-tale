@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CrossAttack : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class CrossAttack : MonoBehaviour
         cooldownTimer = cooldownDuration;
 
         // Freeze player movement
-        PlayerMovement playerMovement = GetComponent<PlayerMovement>(); // Assumes a PlayerMovement script is attached
+        Movement playerMovement = GetComponent<Movement>(); // Assumes a PlayerMovement script is attached
         if (playerMovement != null)
         {
             playerMovement.enabled = false;
@@ -43,7 +45,7 @@ public class CrossAttack : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (Collider hit in hitColliders)
         {
-            Target target = hit.GetComponent<Target>(); // Assumes a Target script on potential targets
+            EnemyPatrol target = hit.GetComponent<EnemyPatrol>(); // Assumes a Target script on potential targets
             if (target != null)
             {
                 StartCoroutine(StunTarget(target));
@@ -60,11 +62,11 @@ public class CrossAttack : MonoBehaviour
         }
     }
 
-    private IEnumerator StunTarget(Target target)
+    private IEnumerator StunTarget(EnemyPatrol target)
     {
-        target.Stun(); // Assumes a Stun method in the Target script
+        //target.Stun(); // Assumes a Stun method in the Target script
         yield return new WaitForSeconds(stunDuration);
-        target.Unstun(); // Assumes an Unstun method in the Target script
+        //target.Unstun(); // Assumes an Unstun method in the Target script
     }
 
     private void OnDrawGizmosSelected()
