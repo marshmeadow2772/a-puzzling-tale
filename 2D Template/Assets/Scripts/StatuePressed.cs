@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class StatuePressed : MonoBehaviour
 {
+    public GameObject myObject;
     public Rockactivate targetScript;
     public bool playerIsClose;
     // Start is called before the first frame update
@@ -19,6 +21,8 @@ public class StatuePressed : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
             targetScript.Fall();
+            myObject.GetComponent<BoxCollider2D>().enabled = false;
+            myObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }
     }
 
