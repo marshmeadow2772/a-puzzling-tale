@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class StatuePressed : MonoBehaviour
 {
     public GameObject myObject;
+    public GameObject secondObject;
     public Rockactivate targetScript;
     public bool playerIsClose;
     // Start is called before the first frame update

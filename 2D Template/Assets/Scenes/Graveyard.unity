@@ -1659,8 +1659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.821167, y: -80.08295}
-  m_SizeDelta: {x: -291.37, y: -180.86}
+  m_AnchoredPosition: {x: 8.134613, y: -108.2341}
+  m_SizeDelta: {x: -292.7432, y: -237.1624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503675458
 MonoBehaviour:
@@ -5069,6 +5069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5c69698f2ced7498dbffebfed05300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myObject: {fileID: 1246314361}
+  secondObject: {fileID: 1246314361}
   targetScript: {fileID: 1400968549}
   playerIsClose: 0
 --- !u!61 &1246314365
@@ -5151,8 +5153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.9313, y: -80.0829}
-  m_SizeDelta: {x: -287.1488, y: -180.8595}
+  m_AnchoredPosition: {x: 8.1343, y: -108.23}
+  m_SizeDelta: {x: -292.74, y: -237.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1272057709
 MonoBehaviour:
