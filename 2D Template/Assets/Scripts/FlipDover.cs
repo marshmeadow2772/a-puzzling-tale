@@ -15,13 +15,13 @@ public class FlipDover : MonoBehaviour
 
     private void Update()
     {
-        _horizonatlMove = Input.GetAxisRaw("Horizontal");
+        _horizonatlMove = _rb2d.velocity.x;
 
-        if(_isFacingRight &&  _horizonatlMove > 0)
+        if(_isFacingRight &&  _horizonatlMove < 0)
         {
             Flip();
         }
-        else if(!_isFacingRight && _horizonatlMove < 0)
+        else if(!_isFacingRight && _horizonatlMove > 0)
         {
             Flip();
         }
@@ -30,6 +30,6 @@ public class FlipDover : MonoBehaviour
     void Flip()
     {
         _isFacingRight = !_isFacingRight;
-        transform.Rotate(0.0f, 180f, 0.0f);
+        transform.Rotate(0.0f, -180f, 0.0f);
     }
 }
